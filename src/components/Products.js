@@ -41,7 +41,12 @@ const Products = ({ items, add, subtract }) => {
                   <p className="card-text">{item.numberInStock} in Stock</p>
                   <div>
                     <button onClick={() => subtract(item)}>-</button>
-                    <button onClick={() => add(item)}>+</button>
+                    <button
+                      disabled={item.numberInStock > 9}
+                      onClick={() => add(item)}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
               </div>
